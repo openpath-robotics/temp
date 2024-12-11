@@ -1,0 +1,319 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Schema for PhoXi API Recording options",
+  "type": "object",
+  "properties": {
+    "auto_enable": {
+      "title": "Auto Enable",
+      "description": "Auto enable recording with stored options when device connects",
+      "type": "boolean",
+      "default": false
+    },
+    "every": {
+      "title": "Every N-th",
+      "description": "Record every N-th scan",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "folder": {
+      "title": "Folder",
+      "description": "Path to folder where to store recorded scan files",
+      "type": "string",
+      "default": "Output"
+    },
+    "overwrite_existing": {
+      "title": "Overwrite Existing",
+      "description": "Overwrite existing files in the folder",
+      "type": "boolean",
+      "default": false
+    },
+    "pattern": {
+      "title": "Pattern",
+      "description": "Filename pattern to use; Variables: #### - File index, number of # represents min. number of characters of file index number, padded with zeros (allowed only at the end of pattern); {file_index} - File index; {device_id} - ID of the device currently recorded from; {frame_id} - Current frame index; {timestamp} - Current timestamp of recording (milliseconds); {date_time} - Formated current date and time of recording YYYY-MM-DD-hh:mm:ss.ms; {frame_start_timestamp} - PTP synchronized timestamp of frame start (milliseconds, 0 if not available); {frame_start_date_time} - Formated PTP synchronized date and time of frame start YYYY-MM-DD-hh:mm:ss.ms (empty if not available); \\\\ - Escape character",
+      "type": "string",
+      "default": "scan_####",
+      "pattern": "[^<>\\/?*\"|:\\\\]*"
+    },
+    "capacity": {
+      "title": "Folder Capacity",
+      "description": "Specifies maximum number of files to store in the `folder` folder. -1: unlimited",
+      "type": "integer",
+      "minimum": -1,
+      "default": -1
+    },
+    "initial_index": {
+      "title": "Initial Index",
+      "description": "Initial file index used by pattern.",
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "continue_numbering": {
+      "title": "Continue Numbering",
+      "description": "Continue numbering of files used by pattern. Based on largest index of file matching pattern in the `folder`",
+      "type": "boolean",
+      "default": false
+    },
+    "containers": {
+      "title": "Containers",
+      "description": "Object containing options for individual supported recording containers/formats. At least one recording container/format MUST be enabled.",
+      "type": "object",
+      "properties": {
+        "ply": {
+          "title": "PLY format",
+          "description": "Stanford's PLY format",
+          "type": "object",
+          "properties": {
+            "binary_format": {
+              "title": "Binary Format",
+              "description": "Use binary format. (false: ASCII format)",
+              "type": "boolean",
+              "default": false
+            },
+            "confidence_map": {
+              "title": "Confidence Map",
+              "type": "boolean",
+              "default": false
+            },
+            "depth_map": {
+              "title": "Depth Map",
+              "type": "boolean",
+              "default": false
+            },
+            "enabled": {
+              "title": "Enabled",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            },
+            "event_map": {
+              "title": "Event Map",
+              "type": "boolean",
+              "default": false
+            },
+            "normal_map": {
+              "title": "Normal Map",
+              "type": "boolean",
+              "default": false
+            },
+            "point_cloud": {
+              "title": "Point Cloud",
+              "type": "boolean",
+              "default": false
+            },
+            "texture": {
+              "title": "Texture",
+              "type": "boolean",
+              "default": false
+            },
+            "unordered": {
+              "title": "Unordered format",
+              "description": "Use unordered format",
+              "type": "boolean",
+              "default": false
+            },
+            "without_metadata": {
+              "title": "Without Metadata",
+              "description": "Use for compatibility with Halcon SW",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "pmraw": {
+          "title": "PMRAW format",
+          "description": "Photoneo MotionCam-3D RAW data format",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "title": "Enabled",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            },
+            "scans_per_file": {
+              "title": "Scans Per File",
+              "description": "Number of scans to save into one PMRAW file. -1: unlimited",
+              "type": "integer",
+              "minimum": -1,
+              "default": -1
+            }
+          }
+        },
+        "png": {
+          "title": "PNG format",
+          "description": "Depth map and texture into 24bit PNG",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "title": "Enabled",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "praw": {
+          "title": "PRAW format",
+          "description": "Photoneo RAW data format",
+          "type": "object",
+          "properties": {
+            "compression": {
+              "title": "Compression",
+              "description": "Use compression",
+              "type": "boolean",
+              "default": false
+            },
+            "diagnostic_profile": {
+              "title": "Diagnostic Profile",
+              "description": "Diagnostic profile to use when `enable_diagnostic_data` is true. 0: 3D Scan (PRAW, ~90MB); 1: 3D Scan With Diagnostic Data (PRAW, ~140MB); 2: 3D Scan With Full Diagnostic Data (PRAW, ~200MB); 3: 2D Outputs (~10MB); 4: 2D Outputs With Diagnostic Data (~20MB)",
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4,
+              "default": 2
+            },
+            "enable_diagnostic_data": {
+              "title": "Enable Diagnostic Data",
+              "description": "Enable recording of diagnostic data. Warning: By enabling this option transfer speeds and frame rate may be reduced!",
+              "type": "boolean",
+              "default": false
+            },
+            "enabled": {
+              "title": "Enabled",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "ptx": {
+          "title": "PTX format",
+          "description": "Leica's PTX",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "title": "Enable",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            },
+            "flip_x": {
+              "title": "Flip X",
+              "description": "Flip X Axis",
+              "type": "boolean",
+              "default": false
+            },
+            "flip_y": {
+              "title": "Flip Y",
+              "description": "Flip Y Axis",
+              "type": "boolean",
+              "default": false
+            },
+            "flip_z": {
+              "title": "Flip Z",
+              "description": "Flip Z Axis",
+              "type": "boolean",
+              "default": false
+            },
+            "scale": {
+              "title": "Scale",
+              "description": "Scale factor",
+              "type": "number",
+              "minimum": 0.0,
+              "default": 1.0
+            },
+            "swap_yz": {
+              "title": "Swap YZ",
+              "description": "Swap Y-Z Axis",
+              "type": "boolean",
+              "default": false
+            },
+            "texture": {
+              "title": "Texture",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "tif": {
+          "title": "TIF format",
+          "description": "RAW data format into TIF",
+          "type": "object",
+          "properties": {
+            "color_camera_image": {
+              "title": "Color Camera Image",
+              "type": "boolean",
+              "default": false
+            },
+            "confidence_map": {
+              "title": "Confidence Map",
+              "type": "boolean",
+              "default": false
+            },
+            "depth_map": {
+              "title": "Depth Map",
+              "type": "boolean",
+              "default": false
+            },
+            "enabled": {
+              "title": "Enable",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            },
+            "normal_map": {
+              "title": "Normal Map",
+              "type": "boolean",
+              "default": false
+            },
+            "point_cloud": {
+              "title": "Point Cloud",
+              "type": "boolean",
+              "default": false
+            },
+            "texture": {
+              "title": "Texture",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "txt": {
+          "title": "TXT format",
+          "description": "RAW data to the text file",
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "title": "Enable",
+              "description": "Enable recording into format",
+              "type": "boolean",
+              "default": false
+            },
+            "normal_map": {
+              "title": "Normal Map",
+              "type": "boolean",
+              "default": false
+            },
+            "point_cloud": {
+              "title": "Point Cloud",
+              "type": "boolean",
+              "default": false
+            },
+            "texture": {
+              "title": "Texture",
+              "type": "boolean",
+              "default": false
+            },
+            "unordered": {
+              "title": "Unordered",
+              "description": "Unordered format",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

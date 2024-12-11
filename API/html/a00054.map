@@ -1,0 +1,5 @@
+<map id="pho::api::PhoXiDeviceInformation" name="pho::api::PhoXiDeviceInformation">
+<area shape="rect" id="node1" title="Information about the connected PhoXi device." alt="" coords="91,109,331,136"/>
+<area shape="rect" id="node2" href="$a00044.html" title="Defines the type of the PhoXi Device." alt="" coords="5,13,200,39"/>
+<area shape="rect" id="node3" href="$a00080.html" title="Status of the device used before connection." alt="" coords="224,5,416,47"/>
+</map>

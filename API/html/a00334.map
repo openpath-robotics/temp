@@ -1,0 +1,6 @@
+<map id="pho::api::PhoXiMotionCamScannerMode" name="pho::api::PhoXiMotionCamScannerMode">
+<area shape="rect" id="node1" title=" " alt="" coords="377,49,572,90"/>
+<area shape="rect" id="node2" href="$a00244.html" title="Defines the used texture source." alt="" coords="9,5,220,32"/>
+<area shape="rect" id="node3" href="$a00240.html" title="Defines the used coding quality." alt="" coords="9,56,220,83"/>
+<area shape="rect" id="node4" href="$a00236.html" title="Defines the used coding strategy in projected patterns." alt="" coords="5,107,224,133"/>
+</map>

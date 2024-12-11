@@ -1,0 +1,4 @@
+<map id="pho::api::FrameMatHolder" name="pho::api::FrameMatHolder">
+<area shape="rect" id="node1" title="FrameMatHolder is a helper class that stores shared_ptr objects owned by Frame." alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node2" href="$a00168.html" title="Frame output structure." alt="" coords="39,80,162,107"/>
+</map>

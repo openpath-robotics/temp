@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/MinimalPclExample.dir/MinimalPclExample.cpp.o -o MinimalPclExample_Debug  -Wl,-rpath,/opt/Photoneo/PhoXiControl-1.13.4/API/lib /opt/Photoneo/PhoXiControl-1.13.4/API/lib/libPhoXi_API_gcc9.3.0_Debug.so /usr/lib/x86_64-linux-gnu/libpcl_common.so -lrt

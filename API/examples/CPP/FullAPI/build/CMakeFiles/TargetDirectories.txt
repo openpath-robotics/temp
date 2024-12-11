@@ -1,0 +1,3 @@
+/opt/Photoneo/PhoXiControl-1.13.4/API/examples/CPP/FullAPI/build/CMakeFiles/rebuild_cache.dir
+/opt/Photoneo/PhoXiControl-1.13.4/API/examples/CPP/FullAPI/build/CMakeFiles/edit_cache.dir
+/opt/Photoneo/PhoXiControl-1.13.4/API/examples/CPP/FullAPI/build/CMakeFiles/FullAPIExample.dir

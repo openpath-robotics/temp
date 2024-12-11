@@ -1,0 +1,3 @@
+/home/jh/buffing/API/examples/CPP/MinimalOpenCV/build/CMakeFiles/rebuild_cache.dir
+/home/jh/buffing/API/examples/CPP/MinimalOpenCV/build/CMakeFiles/edit_cache.dir
+/home/jh/buffing/API/examples/CPP/MinimalOpenCV/build/CMakeFiles/MinimalOpenCVExample.dir

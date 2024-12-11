@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BUFF_PROJECT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Pcl2Oct::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Pcl2Oct-Debug-a65e729a598520d27221.json",
+					"name" : "Pcl2Oct",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Phoxi2Oct::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Phoxi2Oct-Debug-50e874ad8f1914383497.json",
+					"name" : "Phoxi2Oct",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SimulRaisim::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SimulRaisim-Debug-b9ad5058f85a5f35e351.json",
+					"name" : "SimulRaisim",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SimulRaisimDoosan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SimulRaisimDoosan-Debug-994d57c3c0d9e39e8267.json",
+					"name" : "SimulRaisimDoosan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "matrix_transform_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-matrix_transform_test-Debug-11aa79d974657b9bf5ec.json",
+					"name" : "matrix_transform_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pcd_write_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pcd_write_test-Debug-6a8190926592f4ddf41b.json",
+					"name" : "pcd_write_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pcl_compression::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pcl_compression-Debug-07eeacc80c4802ba391c.json",
+					"name" : "pcl_compression",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "visual_pointcloud::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-visual_pointcloud-Debug-710d279770772e38f59d.json",
+					"name" : "visual_pointcloud",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jh/buffing/pcl/cmake-build-debug",
+		"source" : "/home/jh/buffing/pcl"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

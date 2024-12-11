@@ -1,0 +1,52 @@
+CMake Integration - instructions
+
+Photoneo API includes C++ libraries for the Windows and Ubuntu platforms.
+If PHOXI_CONTROL_PATH environment variable is set by the PhoXi Control installer,
+then the cmake integration is simple.
+
+Minimal cmake receipt:
+
+CMakeLists.txt:
+---------------------------------------
+cmake_minimum_required(VERSION 3.10)
+project(MyApp)
+
+if("${PhoXiControlPath}" STREQUAL "")
+    message(WARNING "Variable PhoXiControlPath was not set, setting it to env variable PHOXI_CONTROL_PATH = $ENV{PHOXI_CONTROL_PATH}")
+    set(PhoXiControlPath "$ENV{PHOXI_CONTROL_PATH}")
+endif()
+
+find_package(PhoXi REQUIRED CONFIG PATHS "${PhoXiControlPath}")
+add_executable(${PROJECT_NAME}
+    main.cpp
+)
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        ${PHOXI_LIBRARY}
+)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE
+        system ${PHOXI_INCLUDE_DIRS}
+)
+---------------------------------------
+
+
+Linux platform includes also CXX11_ABI and system linked libraries into PhoXI_API.
+
+CXX11_ABI:
+---------------------------------------
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        ${PHOXI_LIBRARY_CXX_ABI}
+)
+---------------------------------------
+
+System libs:
+---------------------------------------
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        ${PHOXI_LIBRARY_SYSTEM_LIBS}
+)
+---------------------------------------
+This library is useful when a target App using the same lib but with a different version.
+It happens mostly with boost library.
